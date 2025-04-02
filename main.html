@@ -1,0 +1,346 @@
+<!DOCTYPE html><html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gift</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .header-container {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: normal;
+            color: #666;
+        }
+        
+        .main-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px auto;
+            border: 3px solid #f8f8f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+        
+        .countdown {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .checkmark {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        audio {
+            width: 100%;
+        }
+        
+        .play-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .play-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 50px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .header-container {
+            text-align: center;
+        }
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .next { right: 0; }
+        .prev:hover, .next:hover { background: rgba(0, 0, 0, 0.8); }
+    </style>
+</head>
+<body>
+  
+   <div class="header-container">
+        <h1>የምንወደው</h1>
+        <h2>ዘፈን</h2>
+        
+       
+         <div class="audio-player">
+            <audio id="tribalistas-audio" controls>
+                <source src="5.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <button class="play-btn" id="play-button">ሙዚቃ ያጫውቱ</button> <br>
+            <br>
+            
+             <div class="slideshow-container">
+        <img class="slides" src="1.jpg">
+        <img class="slides" src="2.jpg">
+        <img class="slides" src="3.jpg">
+        <img class="slides" src="4.jpg">
+          <img class="slides" src="5.jpg">
+        <img class="slides" src="6.jpg">
+        <img class="slides" src="7.jpg">
+        <img class="slides" src="8.jpg">
+          <img class="slides" src="9.jpg">
+        <img class="slides" src="10.jpg">
+        <img class="slides" src="11.jpg">
+        <img class="slides" src="12.jpg">
+          <img class="slides" src="13.jpg">
+        <img class="slides" src="14.jpg">
+        <img class="slides" src="15.jpg">
+        <img class="slides" src="16.jpg">
+          <img class="slides" src="17.jpg">
+        <img class="slides" src="18.jpg">
+        <img class="slides" src="19.jpg">
+        <img class="slides" src="20.jpg">
+     
+    </div>
+        </div>
+        <br>
+        
+        <div class="countdown">
+    <span class="checkmark">✔️</span> በፍቅር የቆየንበት ጊዜ:<br>
+    <span id="years">3</span> ዓመት, 
+    <span id="months">2</span> ወር, 
+    <span id="days">23</span> ቀን, 
+    <span id="hours">0</span> ሰዓት, 
+    <span id="minutes">0</span> ደቂቃ, 
+    <span id="seconds">0</span> ሴኮንድ
+</div>
+    </d
+    <div class="header-container">
+        
+    </div>
+   
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+        showSlides();
+        
+        
+        function updateEthiopianCountdown() {
+    const now = new Date();
+
+    // Calculate the starting date (3 years, 2 months, 23 days ago)
+    let startDate = new Date(now);
+    startDate.setFullYear(now.getFullYear() - 3);
+    startDate.setMonth(now.getMonth() - 2);
+    startDate.setDate(now.getDate() - 23);
+
+    // Get the elapsed time
+    let elapsedTime = now - startDate;
+
+    // Convert to Ethiopian years, months, and days
+    let ethiopianYears = 3;  // Since we subtracted 3 years
+    let ethiopianMonths = 2; // Since we subtracted 2 months
+    let ethiopianDays = 23;  // Since we subtracted 23 days
+
+    // Convert hours to Ethiopian time (subtract 6 hours)
+    let hours = now.getHours() - 6;
+    if (hours < 0) hours += 24;
+
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    // Update the countdown display
+    document.getElementById("years").textContent = ethiopianYears;
+    document.getElementById("months").textContent = ethiopianMonths;
+    document.getElementById("days").textContent = ethiopianDays;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+// Initialize display and update every second
+setInterval(updateEthiopianCountdown, 1000);
+updateEthiopianCountdown();
+        // Audio player functionality
+        const audio = document.getElementById('tribalistas-audio');
+        const playButton = document.getElementById('play-button');
+        let isPlaying = false;
+        
+        playButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                playButton.textContent = 'ሙዚቃ ያጫውቱ';
+            } else {
+                audio.play();
+                playButton.textContent = 'ሙዚቃ አቁም';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        audio.addEventListener('ended', function() {
+            playButton.textContent = 'ሙዚቃ ያጫውቱ';
+            isPlaying = false;
+        });
+        
+        // Image modal functionality
+        function openModal(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
